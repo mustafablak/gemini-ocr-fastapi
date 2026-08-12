@@ -16,67 +16,61 @@ An automated Document Intelligence & OCR service powered by **Google Gemini Visi
 
 ## 🏗️ Architecture & Workflow
 
+```text
 [ Client / App / Frontend ]
-│
-│  POST /scan-receipt (image file)
-▼
-┌───────────┐
-│  FastAPI  │ ──► Load & Process Image (PIL/io)
-└─────┬─────┘
-│
-│  Prompt & Image Bytes
-▼
-┌───────────────┐
-│ Gemini Vision │ ──► Deep Multimodal Analysis
-└───────┬───────┘
-│
-│  Structured JSON Response
-▼
+          │
+          │  POST /scan-receipt (image file)
+          ▼
+    ┌───────────┐
+    │  FastAPI  │ ──► Load & Process Image (PIL/io)
+    └─────┬─────┘
+          │
+          │  Prompt & Image Bytes
+          ▼
+  ┌───────────────┐
+  │ Gemini Vision │ ──► Deep Multimodal Analysis
+  └───────┬───────┘
+          │
+          │  Structured JSON Response
+          ▼
 [ Clean JSON Data Delivered ]
 
----
+🛠️ Tech Stack
+Framework: FastAPI
 
-## 🛠️ Tech Stack
+ASGI Server: Uvicorn
 
-- **Framework:** [FastAPI](https://fastapi.tiangolo.com/)
-- **ASGI Server:** [Uvicorn](https://www.uvicorn.org/)
-- **AI Model:** [Google Gemini API (`google-genai`)](https://ai.google.dev/)
-- **Image Handling:** [Pillow (PIL)](https://python-pillow.org/)
-- **Environment Management:** [python-dotenv](https://pypi.org/project/python-dotenv/)
+AI Model: Google Gemini API
 
----
+Image Handling: Pillow (PIL)
 
-## 🚀 Getting Started
+Environment Management: python-dotenv
 
-### Prerequisites
-- Python 3.10+ installed
-- Google AI Studio API Key ([Get one here](https://aistudio.google.com/))
+🚀 Getting Started
+Prerequisites
+Python 3.10+ installed
 
-### Installation
+Google AI Studio API Key (Get one here)
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_GITHUB_USERNAME/gemini-ocr-fastapi.git](https://github.com/YOUR_GITHUB_USERNAME/gemini-ocr-fastapi.git)
-   cd gemini-ocr-fastapi
-
-   Create a virtual environment (optional but recommended):
-   python -m venv venv
-# On Windows:
+Installation
+1. Clone the repository:
+git clone https://github.com/mustafablak/gemini-ocr-fastapi.git
+cd gemini-ocr-fastapi
+2.Create a virtual environment (optional but recommended):
+python -m venv venv
+3.Activate virtual environment:
+-On Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+-On macOS/Linux:
 source venv/bin/activate
-
-Install dependencies:
+4.Install dependencies:
 pip install -r requirements.txt
-
-Configure environment variables:
+5.Configure environment variables:
 Create a .env file in the root directory:
 GEMINI_API_KEY=your_gemini_api_key_here
-
-Run the API server:
+6.Run the API server:
 python -m uvicorn main:app --reload
-
-Access Interactive Docs:
+7.Access Interactive Docs:
 Open your browser and navigate to http://localhost:8000/docs to test the API directly using Swagger UI.
 
 📡 API Endpoints
