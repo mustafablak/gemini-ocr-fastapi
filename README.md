@@ -31,7 +31,7 @@ gemini-ocr-fastapi/
 ├── requirements.txt     # Python dependencies
 └── README.md
 ```
-🛠️ Tech Stack
+##🛠️ Tech Stack
 
 ○ Framework: FastAPI
 
@@ -45,7 +45,7 @@ gemini-ocr-fastapi/
 
 ○ ASGI Server: Uvicorn
 
-🚀 Getting Started
+##🚀 Getting Started
 Prerequisites
 Python 3.10+ (If running locally)
 Docker Desktop (If running via containers)
@@ -81,7 +81,7 @@ python -m uvicorn app.main:app --reload
 4. Access Interactive Docs
 Open your browser and navigate to http://localhost:8000/docs to test the API directly using Swagger UI.
 
-📡 API Endpoints
+##📡 API Endpoints
 POST /scan-receipt
 Uploads a receipt image (.png, .jpg, .jpeg, .webp) and returns validated, structured JSON details.
 
@@ -127,8 +127,8 @@ Sample Response Body (200 OK)
   }
 }
 ```
-🔒 Security Note
+##🔒 Security Note
 Make sure never to commit your .env file containing sensitive API keys to public repositories. Ensure .env is listed inside your .gitignore file.
 
-📄 License
+##📄 License
 Distributed under the MIT License. See LICENSE for more information.
