@@ -32,11 +32,17 @@ gemini-ocr-fastapi/
 └── README.md
 ```
 🛠️ Tech Stack
+
 ○ Framework: FastAPI
+
 ○ Data Validation: Pydantic
+
 ○ AI Model: Google Gemini API (gemini-3.5-flash)
+
 ○ Containerization: Docker & Docker Compose
+
 ○ Image Handling: Pillow (PIL)
+
 ○ ASGI Server: Uvicorn
 
 🚀 Getting Started
